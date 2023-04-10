@@ -9,7 +9,7 @@ const {
 
 const userRouterPost = Router();
 
-userRouterPost.post("/users/", createANewAccount);
+userRouterPost.post("/users", createANewAccount);
 userRouterPost.get("/users/:id", findUserById);
 userRouterPost.patch("/users/:id", updateUser);
 userRouterPost.delete("/users/:id", deleteUser);

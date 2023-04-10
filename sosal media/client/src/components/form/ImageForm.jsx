@@ -15,6 +15,8 @@ import {
   } from "@chakra-ui/react";
   import React, { useState } from "react";
   import { MdOutlineAddPhotoAlternate } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { addPost } from "../../redux/appReducer/action";
 
   
   const ImageForm = () => {
@@ -22,9 +24,25 @@ import {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [url,setUrl] = useState('')
-  
+    const dispatch = useDispatch()
+    const {user} = useSelector((e) => e.authReducer)
+
     function AddPost(){
-      console.log({title,content,url})
+     if(title && content && url){
+        dispatch(addPost({
+          title: title,
+          content,
+          user_id: user._id,  
+          name: user.name,
+          imgUrl: url,
+          avtarUrl: user.url,
+          type: 'image',
+          template: 'none',
+          likes: [],
+        }))
+     }else{
+      alert('no')
+     }
     }
 
     return (

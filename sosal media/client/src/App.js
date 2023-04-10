@@ -3,6 +3,7 @@ import Signin from "./components/auth/signin/Signin";
 import Navbar from "./components/navbar/Navbar";
 import Signup from "./components/auth/signup/Signup";
 import Posts from "./components/posts/Posts";
+import Profile from "./components/profile/Profile";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/signup" element={<Signup/>} />
         <Route path="/signin" element={<Signin/>} />
         <Route path="/" element={<Posts/>}/>
+        <Route path="/profile" element={<Profile/>} />
       </Routes>
     </>
   );

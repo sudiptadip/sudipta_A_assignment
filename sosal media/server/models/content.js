@@ -6,6 +6,9 @@ const postSchema = new mongoosh.Schema({
   user_id: String,
   name: String,
   imgUrl: String,
+  avtarUrl: { type: String },
+  type: { type: String },
+  template: { type: String },
   likes: {
     type: [String],
     default: [],
